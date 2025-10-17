@@ -44,7 +44,7 @@ Do not use side-effects in the procedure given to map. If you need an ordered `m
 
 ## Depending on `eq?` of integers
 
-Integers, not even small ones, are not guaranteed to be `eq?`. Therefore `(eq? x 0)` may evaulate to `#f` or `#t` no matter if `x` or `0` or not.
+Integers, not even small ones, are not guaranteed to be `eq?`. Therefore `(eq? x 0)` may evaluate to `++#++f` or `++#++t` no matter if `x` or `0` or not.
 
 Use `eqv?` or `=` instead.
 
@@ -92,7 +92,7 @@ Use native endianness when the bytevectors will stay in memory and will not be w
 
 Sometimes there is nothing wrong with your code, but you can't get it running on some Scheme implementation. This is usually a bug in the implementation, but it may not be fixed for a very long time.
 
-Weinholt has created https://hub.docker.com/u/weinholt[Docker images for most R6RS Scheme implementations]. These have one thing in common: they can all run Scheme scripts that start with `#!/usr/bin/env scheme-script`. These can be useful when you want to test your code.
+Weinholt has created https://hub.docker.com/u/weinholt[Docker images for most R6RS Scheme implementations]. These have one thing in common: they can all run Scheme scripts that start with `++#++!/usr/bin/env scheme-script`. These can be useful when you want to test your code.
 
 === Chez Scheme
 
@@ -104,6 +104,6 @@ Guile has problems with some R6RS lexical syntax. Escapes in symbols are not han
 
 Guile does not use `.guile.sls` and `.sls` by default; they need to be added to `%load-extensions`.
 
-Guile does not ignore the `#!/usr/bin/env scheme-script` line at the start of scripts. But it supports an old block comment syntax `#! foo !#`, so a workaround is to add `!#` on the second line of the script.
+Guile does not ignore the `++#++!/usr/bin/env scheme-script` line at the start of scripts. But it supports an old block comment syntax `++#++! foo !++#++`, so a workaround is to add `!#` on the second line of the script.
 
 Guile has some problems with built-in lexical identifiers like `else`. These are not exported from the standard library and your own macros may inadvertently replace them if they appear in `syntax-rules` or `syntax-case`.
